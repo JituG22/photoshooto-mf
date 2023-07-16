@@ -1,0 +1,224 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"photoshooto-host-app": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/photoshooto-host-app",
+			"sourceRoot": "projects/photoshooto-host-app/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/photoshooto-host-app",
+						"index": "projects/photoshooto-host-app/src/index.html",
+						"main": "projects/photoshooto-host-app/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/photoshooto-host-app/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/photoshooto-host-app/src/favicon.ico",
+							"projects/photoshooto-host-app/src/assets"
+						],
+						"styles": [
+							"projects/photoshooto-host-app/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/photoshooto-host-app/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/photoshooto-host-app/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "photoshooto-host-app:build:production",
+							"extraWebpackConfig": "projects/photoshooto-host-app/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "photoshooto-host-app:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4200,
+						"publicHost": "http://localhost:4200",
+						"extraWebpackConfig": "projects/photoshooto-host-app/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "photoshooto-host-app:build",
+						"extraWebpackConfig": "projects/photoshooto-host-app/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/photoshooto-host-app/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/photoshooto-host-app/src/favicon.ico",
+							"projects/photoshooto-host-app/src/assets"
+						],
+						"styles": [
+							"projects/photoshooto-host-app/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"folderupload-remote-app": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/folderupload-remote-app",
+			"sourceRoot": "projects/folderupload-remote-app/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/folderupload-remote-app",
+						"index": "projects/folderupload-remote-app/src/index.html",
+						"main": "projects/folderupload-remote-app/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/folderupload-remote-app/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/folderupload-remote-app/src/favicon.ico",
+							"projects/folderupload-remote-app/src/assets"
+						],
+						"styles": [
+							"projects/folderupload-remote-app/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/folderupload-remote-app/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/folderupload-remote-app/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "folderupload-remote-app:build:production",
+							"extraWebpackConfig": "projects/folderupload-remote-app/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "folderupload-remote-app:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4300,
+						"publicHost": "http://localhost:4300",
+						"extraWebpackConfig": "projects/folderupload-remote-app/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "folderupload-remote-app:build",
+						"extraWebpackConfig": "projects/folderupload-remote-app/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/folderupload-remote-app/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/folderupload-remote-app/src/favicon.ico",
+							"projects/folderupload-remote-app/src/assets"
+						],
+						"styles": [
+							"projects/folderupload-remote-app/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		}
+	},
+	"cli": {
+		"analytics": false
+	}
+}

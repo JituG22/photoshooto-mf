@@ -1,0 +1,16 @@
+<div class="profile-wrp flex justify-center items-center my-7 flex-col">
+  <img src="{{ userInfo.img }}" class="w-[120px]" />
+  <div class="flex justify-center items-center flex-col gap-1">
+    <div class="font-ui-serif text-[#0B3955] text-lg font-bold">
+      {{ userInfo.name }}
+    </div>
+    <div class="text-xs">PID: {{ userInfo.pid }}</div>
+    <div class="text-xs">{{ userInfo.type }}</div>
+    <div class="text-xs">Experience : {{ userInfo.experience }}</div>
+    <mat-progress-bar
+      class="mt-2"
+      mode="determinate"
+      value="{{ userInfo.score }}"
+    ></mat-progress-bar>
+  </div>
+</div>
